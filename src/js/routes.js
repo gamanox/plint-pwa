@@ -2,6 +2,7 @@
 import HomePage from '../pages/home.svelte';
 import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
+import ClientesPage from '../pages/clientes.svelte';
 
 import LeftPage1 from '../pages/left-page-1.svelte';
 import LeftPage2 from '../pages/left-page-2.svelte';
@@ -22,6 +23,7 @@ var routes = [
     path: '/form/',
     component: FormPage,
   },
+ 
 
   {
     path: '/left-page-1/',
@@ -35,8 +37,9 @@ var routes = [
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage,
   },
+  
   {
-    path: '/request-and-load/user/:userId/',
+    path: '/clientes',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance
       var router = this;
@@ -45,44 +48,26 @@ var routes = [
       var app = router.app;
 
       // Show Preloader
-      app.preloader.show();
+      // app.preloader.show();
 
       // User ID from request
-      var userId = routeTo.params.userId;
+      
 
       // Simulate Ajax Request
-      setTimeout(function () {
-        // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
-        // Hide Preloader
-        app.preloader.hide();
-
-        // Resolve route to load page
+      this.app.request.json('http://api.plint.mx/clientes', function (data) {
         resolve(
+          // How and what to load: template
           {
-            component: RequestAndLoad,
+            component: ClientesPage
           },
+          // Custom template context
           {
             context: {
-              user: user,
-            }
+              clients: data,
+            },
           }
         );
-      }, 1000);
+      });
     },
   },
   {
