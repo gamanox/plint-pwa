@@ -4,17 +4,21 @@
   <Panel left cover themeDark visibleBreakpoint={960}>
     <View>
       <Page>
-        <Navbar title="Left Panel"/>
-        <BlockTitle>Left View Navigation</BlockTitle>
+        <Navbar title="Plint" />
+        <!-- <BlockTitle>Left View Navigation</BlockTitle>
         <List>
           <ListItem link="/left-page-1/" title="Left Page 1"/>
           <ListItem link="/left-page-2/" title="Left Page 2"/>
-        </List>
-        <BlockTitle>Control Main View</BlockTitle>
+        </List> -->
+        <BlockTitle></BlockTitle>
         <List>
-          <ListItem link="/about/" view=".view-main" panelClose title="About"/>
-          <ListItem link="/form/" view=".view-main" panelClose title="Form"/>
-          <ListItem link="#" view=".view-main" back panelClose title="Back in history"/>
+          <ListItem link="/about/" view=".view-main" panelClose title="Mi Perfil"/>
+          <ListItem link="/clientes/" view=".view-main" panelClose title="Clientes"/>
+          <ListItem link="/form/" view=".view-main" panelClose title="Compañía"/>
+          <ListItem link="/form/" view=".view-main" panelClose title="Suscripción"/>
+          <ListItem link="/form/" view=".view-main" panelClose title="Recordatorios"/>
+          <ListItem link="/form/" view=".view-main" panelClose title="Acerca de Plint"/>
+          <ListItem link="#" view=".view-main" back panelClose title="Ayuda"/>
         </List>
       </Page>
     </View>

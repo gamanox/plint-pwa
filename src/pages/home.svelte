@@ -27,7 +27,7 @@
   <BlockTitle>Navigation</BlockTitle>
   <List>
     <ListItem link="/about/" title="About"/>
-    <ListItem link="/form/" title="Form"/>
+    <ListItem link="/form/" title="Test"/>
   </List>
 
   <BlockTitle>Modals</BlockTitle>
